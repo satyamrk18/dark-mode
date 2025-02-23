@@ -3,35 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>bulb on off</title>
     <style>
-      .heading {
-        background-color: red;
-        color: pink;
+      .container {
+        width: 300px;
+        height: 300px;
+        background-color: rgba(245, 222, 179, 0.687);
+        display: block;
+        margin: 30px auto;
+        border: 1px solid black;
+        border-radius: 10px;
       }
-      .heading2 {
-        background-color: black;
+      .bulb {
+        height: 200px;
+        display: block;
+        margin: 10px auto;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        height: 30px;
+      }
+      .btn {
+        height: 30px;
+        width: 50px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 900;
+      }
+      #toggle {
+        background-color: green;
         color: white;
-      }
-      .heading3 {
-        background-color: blue;
-        color: gray;
+        width: 150px;
       }
     </style>
   </head>
-  <body>
-    <h1 class="heading" id="heading">i love javascript</h1>
-    <button type="button" onclick="black()">Black</button>
-    <button type="button" onclick="blue()">Blue</button>
+  <body id="body">
+    <div class="container">
+      <img src="on-bulb.png" id="bulb" class="bulb" />
+      <div class="buttons">
+        <button onclick="toggle()" type="button" id="toggle" class="btn">
+          Toggle
+        </button>
+      </div>
+    </div>
 
     <script>
-      function black() {
-        const heading = document.getElementById("heading");
-        heading.classList.add("heading2");
-      }
-      function blue() {
-        const heading3 = document.getElementById("heading");
-        heading3.classList.add("heading3");
+      const Bulb = document.getElementById("bulb");
+      const Body = document.getElementById("body");
+      function toggle() {
+        if (Bulb.src.includes("on-bulb.png")) {
+          //it directly print the system path hence we use include= includes search takes a input as a string and check the given string is present in the o/p or not
+          Bulb.src = "off-bulb.png";
+          Body.style.backgroundColor = "#000";
+        } else {
+          Bulb.src = "on-bulb.png";
+          Body.style.backgroundColor = "#fff";
+        }
       }
     </script>
   </body>
