@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 50px;
+    }
+    .box {
+      height: 300px;
+      width: 300px;
+      background-color: tomato;
+    }
+    .rectangle {
+      height: 300px;
+      width: 500px;
+      background-color: aqua;
+    }
+    .circle {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <div class="box" id="box"></div>
+    <button type="button" onclick="shape('rectangle')">rectangle</button>
+    <button type="button" onclick="shape('circle')">circle</button>
+    <button type="button" onclick="shape('box')">square</button>
+
+    <script>
+      const Box = document.getElementById("box");
+      function shape(className) {
+        Box.className = className;
+      }
+    </script>
+  </body>
+</html>
